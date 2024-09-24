@@ -15,7 +15,7 @@ function BookCreate({ onCreate }) {
 
 	return (
 		<div className='book-create'>
-			<h3>Adda Book</h3>
+			<h3>Add Book</h3>
 			<form onSubmit={handleSubmit}>
 				<label>Title</label>
 				<input
@@ -23,7 +23,7 @@ function BookCreate({ onCreate }) {
 					value={title}
 					onChange={handleChange}
 				/>
-				<button className='button'>Create!</button>
+				<button className='button'>Create</button>
 			</form>
 		</div>
 	);
