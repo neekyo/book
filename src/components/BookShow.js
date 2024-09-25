@@ -12,8 +12,9 @@ function BookShow({ book, onDelete, onEdit }) {
 		setShowEdit(!showEdit);
 	};
 
-	const handleSubmit = () => {
+	const handleSubmit = (id, newTitle) => {
 		setShowEdit(false);
+		onEdit(id, newTitle);
 	};
 
 	let content = <h3>{book.title}</h3>;
@@ -22,13 +23,16 @@ function BookShow({ book, onDelete, onEdit }) {
 			<BookEdit
 				onSubmit={handleSubmit}
 				book={book}
-				onEdit={onEdit}
 			/>
 		);
 	}
 
 	return (
 		<div className='book-show'>
+			<img
+				src={`https://picsum.photos/seed/${book.id}/300/200`}
+				alt='books'
+			/>
 			<div>{content}</div>
 			<div className='actions'>
 				<button
