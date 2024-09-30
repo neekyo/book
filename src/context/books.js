@@ -47,7 +47,20 @@ function Provider({ children }) {
 		setBooks(updateBooks);
 	};
 
-	return <BooksContext.Provider value={{}}>{children}</BooksContext.Provider>;
+	//rename this lol
+	const valueToShare = {
+		books,
+		deleteBookById,
+		editBookById,
+		createBook,
+		fetchBooks,
+	};
+
+	return (
+		<BooksContext.Provider value={valueToShare}>
+			{children}
+		</BooksContext.Provider>
+	);
 }
 
 export { Provider };
